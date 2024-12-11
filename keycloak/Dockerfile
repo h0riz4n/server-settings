@@ -24,10 +24,10 @@ ENV KC_DB_SCHEMA=keycloak
 ENV KC_DB_USERNAME=postgres
 ENV KC_DB_PASSWORD=Rustam2003
 ENV KC_HOSTNAME=id.kwagga.ru
-ENV KC_HTTPS_CERTIFICATE_FILE=/app/cert/domain_name.pem
-ENV KC_HTTPS_CERTIFICATE_KEY_FILE=/app/cert/private.pem
+# ENV KC_HTTPS_CERTIFICATE_FILE=/app/cert/domain_name.pem
+# ENV KC_HTTPS_CERTIFICATE_KEY_FILE=/app/cert/private.pem
 
 RUN /opt/keycloak/bin/kc.sh build
 
 # Запускаем Keycloak
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--log-level=DEBUG", "--https-port=8443", "--hostname=https://id.kwagga.ru"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--log-level=DEBUG", "--hostname=https://id.kwagga.ru"]

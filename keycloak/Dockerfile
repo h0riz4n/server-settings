@@ -25,4 +25,4 @@ ENV KC_HOSTNAME=id.kwagga.ru
 RUN /opt/keycloak/bin/kc.sh build
 
 # Запускаем Keycloak
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start", "--log-level=DEBUG", "--https-port=8443", "--hostname=https://id.kwagga.ru"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--log-level=DEBUG", "--https-port=8443", "--hostname=https://id.kwagga.ru"]

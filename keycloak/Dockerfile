@@ -15,7 +15,7 @@ USER 1000
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 
-ENV KC_DB=kwagga
+ENV KC_DB=postgres
 ENV KC_DB_URL=jdbc:postgresql://postgres:5432/kwagga
 ENV KC_DB_SCHEMA=keycloak
 ENV KC_DB_USERNAME=postgres

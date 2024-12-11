@@ -20,6 +20,7 @@ ENV KC_DB_URL=jdbc:postgresql://postgres:5432/kwagga
 ENV KC_DB_SCHEMA=keycloak
 ENV KC_DB_USERNAME=postgres
 ENV KC_DB_PASSWORD=Rustam2003
+ENV KC_HOSTNAME=id.kwagga.ru
 
 RUN /opt/keycloak/bin/kc.sh build
 

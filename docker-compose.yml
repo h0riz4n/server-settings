@@ -3,6 +3,8 @@ services:
     build: ./keycloak
     container_name: keycloak
     restart: unless-stopped
+    ports:
+      - 8443
     expose:
       - 8080
       - 8443

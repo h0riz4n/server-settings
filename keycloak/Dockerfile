@@ -27,7 +27,6 @@ ENV KC_HOSTNAME=id.kwagga.ru
 ENV KC_HTTPS_CERTIFICATE_FILE=/app/cert/domain_name.pem
 ENV KC_HTTPS_CERTIFICATE_KEY_FILE=/app/cert/private.pem
 
-
 RUN /opt/keycloak/bin/kc.sh build
 
 # Запускаем Keycloak

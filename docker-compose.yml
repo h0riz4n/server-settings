@@ -4,6 +4,7 @@ services:
     container_name: keycloak
     restart: unless-stopped
     expose:
+      - 8080
       - 8443
     environment:
       VIRTUAL_HOST: id.kwagga.ru

@@ -25,4 +25,4 @@ ENV KC_HOSTNAME=id.kwagga.ru
 RUN /opt/keycloak/bin/kc.sh build
 
 # Запускаем Keycloak
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--features=token-exchange"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--features=token-exchange", "--log-level=DEBUG"]

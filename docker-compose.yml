@@ -68,6 +68,7 @@ services:
       - dev
 
 volumes:
+  minio_storage:
   database:
   redis:
 

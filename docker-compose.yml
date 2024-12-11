@@ -1,0 +1,22 @@
+services:
+  redisinsight:
+    container_name: redisinsight
+    image: redis/redisinsight:2.60
+    restart: unless-stopped
+    environment:
+      VIRTUAL_HOST: redis.kwagga.ru
+      VIRTUAL_PORT: 5540
+      LETSENCRYPT_HOST: redis.kwagga.ru
+    expose:
+      - 5540
+    volumes:
+      - redisinsight:/data
+    networks:
+      - dev
+
+volumes:
+  redisinsight:
+
+networks:
+  dev:
+    external: true

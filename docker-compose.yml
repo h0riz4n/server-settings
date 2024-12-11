@@ -7,6 +7,8 @@ services:
       VIRTUAL_HOST: redis.kwagga.ru
       VIRTUAL_PORT: 5540
       LETSENCRYPT_HOST: redis.kwagga.ru
+      RI_USERNAME: rustam
+      RI_PASSWORD: Rustam2003
     expose:
       - 5540
     volumes:

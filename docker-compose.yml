@@ -11,7 +11,7 @@ services:
       VIRTUAL_PORT: 8080
       LETSENCRYPT_HOST: id.kwagga.ru
     networks:
-      - dev
+      - kwagga
 
   postgres:
     image: postgres
@@ -26,7 +26,7 @@ services:
     expose:
       - 5432
     networks:
-      - dev
+      - kwagga
     volumes:
       - database:/var/lib/postgresql/data
 
@@ -46,7 +46,7 @@ services:
       - 9000
       - 9001
     networks:
-      - dev
+      - kwagga
     command: server --console-address ":9001" /data
 
   redis:
@@ -66,7 +66,7 @@ services:
       - ./redis.conf:/usr/local/etc/redis/redis.conf
       - ./users.acl:/usr/local/etc/redis/users.acl
     networks:
-      - dev
+      - kwagga
 
 volumes:
   minio_storage:
@@ -74,5 +74,5 @@ volumes:
   redis:
 
 networks:
-  dev:
-    external: true
+  kwagga:
+    driver: bridge

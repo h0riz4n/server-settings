@@ -10,7 +10,7 @@ services:
       - certs:/etc/nginx/certs:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
-      - bridge
+      - kwagga
 
   acme-companion:
     image: nginxproxy/acme-companion
@@ -24,7 +24,7 @@ services:
       - acme:/etc/acme.sh
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
-      - bridge
+      - kwagga
 
 volumes:
   html:
@@ -32,5 +32,5 @@ volumes:
   acme:
 
 networks:
-  bridge:
+  kwagga:
     external: true

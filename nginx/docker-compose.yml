@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+  nginx-proxy:
+    build: .
+    container_name: "nginx-proxy-root"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - certs:/etc/nginx/certs
+      - vhostd:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+    restart: always
+    networks:
+      - kwagga
+
+  acme-companion:
+    container_name: "nginx-acme-companion"
+    restart: always
+    image: nginxproxy/acme-companion:2.5
+    volumes:
+      - certs:/etc/nginx/certs
+      - vhostd:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - acme:/etc/acme.sh
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - NGINX_PROXY_CONTAINER=nginx-proxy-root
+      - DEFAULT_EMAIL=DreaMaNG2toPlay@yandex.ru
+    depends_on:
+      - nginx-proxy
+    privileged: true
+    networks:
+      - kwagga
+
+volumes:
+  certs:
+  vhostd:
+  html:
+  acme:
+
+networks:
+  kwagga:
+    driver: bridge

@@ -1,8 +1,6 @@
-version: "2"
-
 services:
   nginx-proxy:
-    image: nginxproxy/nginx-proxy
+    build: .
     container_name: nginx-proxy
     ports:
       - 80:80
@@ -18,7 +16,7 @@ services:
     image: nginxproxy/acme-companion
     container_name: nginx-proxy-acme
     environment:
-      - DEFAULT_EMAIL=mail@yourdomain.tld
+      - DEFAULT_EMAIL=dreamang2toplay@yandex.ru
     volumes_from:
       - nginx-proxy
     volumes:

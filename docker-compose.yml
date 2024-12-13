@@ -72,3 +72,8 @@ volumes:
   minio_storage:
   database:
   redis:
+
+networks:
+  kwagga:
+    driver: bridge
+    external: true

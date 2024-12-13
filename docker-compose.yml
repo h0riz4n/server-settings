@@ -26,7 +26,7 @@ services:
     expose:
       - 5432
     networks:
-      - host
+      - bridge
     volumes:
       - database:/var/lib/postgresql/data
 
@@ -46,7 +46,7 @@ services:
       - 9000
       - 9001
     networks:
-      - host
+      - bridge
     command: server --console-address ":9001" /data
 
   redis:
@@ -66,7 +66,7 @@ services:
       - ./redis.conf:/usr/local/etc/redis/redis.conf
       - ./users.acl:/usr/local/etc/redis/users.acl
     networks:
-      - host
+      - bridge
 
 volumes:
   minio_storage:
@@ -74,5 +74,5 @@ volumes:
   redis:
 
 networks:
-  host:
+  bridge:
     external: true

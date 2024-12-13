@@ -25,4 +25,4 @@ ENV KC_HOSTNAME=id.kwagga.ru
 RUN /opt/keycloak/bin/kc.sh build
 
 # Запускаем Keycloak
-ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--log-level=DEBUG", "--hostname=https://id.kwagga.ru"]
+ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev", "--log-level=DEBUG", "--hostname=https://id.kwagga.ru", "--proxy-headers=forwarded"]

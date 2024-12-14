@@ -33,7 +33,7 @@ services:
   minio:
     image: minio/minio
     extra_hosts:
-      - "id.kwagga.ru:172.18.0.2"
+      - "*.kwagga.ru:172.18.0.2"
     container_name: minio
     restart: unless-stopped
     volumes:

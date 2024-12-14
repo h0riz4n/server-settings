@@ -32,8 +32,6 @@ services:
 
   minio:
     image: minio/minio
-    extra_hosts:
-      - "id.kwagga.ru:nginx-proxy"
     container_name: minio
     restart: unless-stopped
     volumes:
